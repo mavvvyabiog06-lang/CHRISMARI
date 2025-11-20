@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRISMARI Car Rental - Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="booking-page">
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="navbar">
+      <div class="logo">CHRISMARI</div>
+      <nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="booking.html">Booking</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="btn" type="button" data-scroll="#booking-form">Book Now</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Booking Header Section -->
+    <section class="booking-header">
+      <div class="container">
+        <p class="eyebrow">CHRISMARI Premium Rentals</p>
+        <h1>Book Your Ride</h1>
+        <p class="lead">Finalize your rental in three simple steps: choose a car, complete your details, and secure payment.</p>
+
+        <div class="booking-steps" aria-label="Booking progress">
+          <div class="step completed">
+            <div class="step-number">1</div>
+            <span>Select Car</span>
+          </div>
+          <div class="step current">
+            <div class="step-number">2</div>
+            <span>Enter Details</span>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <span>Confirm & Pay</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-layout container">
+      <div class="booking-left">
+        <!-- Car Selection Section -->
+        <section class="card-surface car-selection" aria-labelledby="car-selection-title">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Step 1</p>
+              <h2 id="car-selection-title">Select Your Car</h2>
+            </div>
+            <p class="muted">Tap a car to highlight it and update your quote instantly.</p>
+          </div>
+
+          <div class="car-carousel">
+            <article class="car-card">
+              <div class="car-media">
+                <img src="images/silvermetallic.png" alt="Toyota Vios 2025">
+              </div>
+              <div class="car-info">
+                <h3>Toyota Vios 2025</h3>
+                <p>Seats 5 · Automatic · Bluetooth · Apple CarPlay</p>
+                <div class="car-meta">
+                  <span class="price-tag">₱2,800/day</span>
+                  <span class="badge">Best Seller</span>
+                </div>
+                <button type="button" class="btn select-car" data-car="Toyota Vios 2025" data-price="2800">Select</button>
+              </div>
+            </article>
+
+            <article class="car-card">
+              <div class="car-media">
+                <img src="images/fortuner2012.png" alt="Toyota Fortuner 2012">
+              </div>
+              <div class="car-info">
+                <h3>Toyota Fortuner 2012</h3>
+                <p>Seats 7 · Manual · Multi-zone AC · Roof Rails</p>
+                <div class="car-meta">
+                  <span class="price-tag">₱3,900/day</span>
+                  <span class="badge neutral">Family Choice</span>
+                </div>
+                <button type="button" class="btn select-car" data-car="Toyota Fortuner 2012" data-price="3900">Select</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="card-surface booking-form-card" aria-labelledby="booking-form-title">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2 id="booking-form-title">Complete Your Booking</h2>
+            </div>
+            <p class="muted">Provide your details and travel schedule so we can prepare your ride.</p>
+          </div>
+
+          <form id="booking-form">
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Full Name</span>
+                <input type="text" name="name" placeholder="Jordan Cruz" required>
+              </label>
+              <label class="form-field">
+                <span>Email Address</span>
+                <input type="email" name="email" placeholder="you@example.com" required>
+              </label>
+              <label class="form-field">
+                <span>Phone Number</span>
+                <input type="tel" name="phone" placeholder="+63 900 000 0000" required>
+              </label>
+              <label class="form-field">
+                <span>Pick-up Location</span>
+                <input type="text" name="pickup-location" placeholder="Airport / Hotel" required>
+              </label>
+              <label class="form-field">
+                <span>Drop-off Location</span>
+                <input type="text" name="dropoff-location" placeholder="Same as pick-up" required>
+              </label>
+              <label class="form-field">
+                <span>Selected Car</span>
+                <input type="text" name="selected-car" id="selected-car" placeholder="Choose a car to continue" readonly required>
+              </label>
+            </div>
+
+            <div class="form-grid two-column">
+              <label class="form-field">
+                <span>Pick-up Date & Time</span>
+                <input type="datetime-local" name="pickup" required>
+              </label>
+              <label class="form-field">
+                <span>Drop-off Date & Time</span>
+                <input type="datetime-local" name="dropoff" required>
+              </label>
+            </div>
+            <small class="help-text" id="duration-hint">Select your pick-up and drop-off to calculate the rental duration.</small>
+
+            <div class="add-ons">
+              <p class="section-label">Add-ons</p>
+              <div class="chip-list">
+                <label class="chip">
+                  <input type="checkbox" name="addons" value="Driver">
+                  <span>Driver (+₱500)</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="addons" value="Baby Seat">
+                  <span>Baby Seat (+₱500)</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="addons" value="Insurance">
+                  <span>Insurance (+₱500)</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" name="addons" value="Additional Fuel">
+                  <span>Additional Fuel (+₱500)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="total-price-pill">
+              <span>Total Price</span>
+              <strong><span id="total-price">₱0.00</span></strong>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Submit Booking</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="booking-right">
+        <!-- Booking Summary Section -->
+        <section class="card-surface booking-summary" aria-labelledby="booking-summary-title">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Live Summary</p>
+              <h2 id="booking-summary-title">Booking Overview</h2>
+            </div>
+            <p class="muted">All selections update in real time for quick verification.</p>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-row">
+              <span>Selected Car</span>
+              <strong id="summary-car">Choose a car</strong>
+            </div>
+            <div class="summary-row">
+              <span>Rental Duration</span>
+              <strong id="summary-duration">—</strong>
+            </div>
+            <div class="summary-row">
+              <span>Add-ons</span>
+              <strong id="summary-addons">None selected</strong>
+            </div>
+            <div class="summary-row">
+              <span>Payment Method</span>
+              <strong id="summary-payment-method">Credit/Debit Card</strong>
+            </div>
+            <div class="summary-total">
+              <span>Estimated Total</span>
+              <strong><span id="summary-price">₱0.00</span></strong>
+            </div>
+            <button class="btn confirm-booking" type="button">Confirm Booking</button>
+          </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="card-surface payment-section" aria-labelledby="payment-section-title">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Step 3</p>
+              <h2 id="payment-section-title">Payment</h2>
+            </div>
+            <p class="muted">Securely settle your reservation with your preferred method.</p>
+          </div>
+
+          <div class="payment-methods" role="radiogroup" aria-label="Payment methods">
+            <label class="method-card">
+              <input type="radio" name="payment-method" value="card" checked>
+              <span>Credit / Debit Card</span>
+            </label>
+            <label class="method-card">
+              <input type="radio" name="payment-method" value="gcash">
+              <span>GCash</span>
+            </label>
+            <label class="method-card">
+              <input type="radio" name="payment-method" value="online">
+              <span>Online Banking</span>
+            </label>
+          </div>
+
+          <form id="payment-form">
+            <div class="payment-fields active" data-method="card">
+              <label>
+                <span>Card Number</span>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" inputmode="numeric" required>
+              </label>
+              <label>
+                <span>Expiry Date</span>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+              </label>
+              <label>
+                <span>CVV</span>
+                <input type="text" id="cvv" name="cvv" placeholder="123" inputmode="numeric" required>
+              </label>
+            </div>
+
+            <div class="payment-fields" data-method="gcash">
+              <label>
+                <span>GCash Number</span>
+                <input type="tel" id="gcash-number" name="gcash-number" placeholder="+63 900 000 0000" data-required="true">
+              </label>
+              <label>
+                <span>Account Name</span>
+                <input type="text" id="gcash-name" name="gcash-name" placeholder="Registered GCash Name" data-required="true">
+              </label>
+              <label>
+                <span>Reference Screenshot URL (optional)</span>
+                <input type="url" id="gcash-reference" name="gcash-reference" placeholder="https://drive.google.com/...">
+              </label>
+            </div>
+
+            <div class="payment-fields" data-method="online">
+              <label>
+                <span>Select Bank</span>
+                <select id="online-bank" name="online-bank" data-required="true">
+                  <option value="">Choose your bank</option>
+                  <option value="bdo">BDO</option>
+                  <option value="bpi">BPI</option>
+                  <option value="metrobank">Metrobank</option>
+                  <option value="security-bank">Security Bank</option>
+                  <option value="unionbank">UnionBank</option>
+                </select>
+              </label>
+              <label>
+                <span>Account Name</span>
+                <input type="text" id="online-name" name="online-name" placeholder="Account holder" data-required="true">
+              </label>
+              <label>
+                <span>Reference Number</span>
+                <input type="text" id="online-reference" name="online-reference" placeholder="e.g., 1234567890" data-required="true">
+              </label>
+            </div>
+
+            <div class="payment-note">
+              <p class="muted">We will email an official receipt immediately after successful payment.</p>
+            </div>
+
+            <div class="payment-status" id="payment-status" role="status" aria-live="polite"></div>
+
+            <button class="btn" type="submit">Pay Securely</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div class="modal" id="confirmation-modal">
+    <div class="modal-content">
+      <h2>Booking Successful!</h2>
+      <p>Your booking reference number is <span id="booking-reference"></span>.</p>
+      <button class="btn" id="back-to-home" type="button">Back to Home</button>
+    </div>
+  </div>
+</body>
+
+</html>

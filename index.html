@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRISMARI Car Rental Services</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="images/LogoLogo.gif" alt="CHRISMARI Logo" id="splash-gif">
+  </div>
+
+  <script>
+    // Splash Screen Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const splash = document.getElementById('splash-screen');
+      setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => splash.style.display = 'none', 500);
+      }, 3000); // Display splash for 3 seconds
+    });
+  </script>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">CHRISMARI</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn js-booking-redirect">
+        Book Now
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div>
+      <h1 style="color: white;">Drive with Comfort. Rent with Confidence.</h1>
+      <p>CHRISMARI Car Rental Services — affordable, reliable, and hassle-free.</p>
+      <button class="btn js-booking-redirect">
+        Start Booking
+      </button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <img src="assets/about-placeholder.jpg" alt="About Us">
+    <div class="content">
+      <h2>About Us</h2>
+      <p>CHRISMARI Car Rental Services is dedicated to providing reliable and affordable car rental solutions.</p>
+      <ul>
+        <li>Mission: Customer satisfaction</li>
+        <li>Reliability: Always on time</li>
+        <li>Affordability: Competitive pricing</li>
+        <li>Convenience: Easy booking process</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Fleet Section -->
+  <section id="fleet" class="fleet">
+    <h2>Our Fleet</h2>
+    <div class="grid">
+      <div class="card toyota-vios">
+        <img src="images/silvermetallic.png" alt="Toyota Vios">
+        <div class="details">
+          <h3>Toyota Vios 2025</h3>
+          <p>Automatic Transmission</p>
+          <p>Daily: $50 | Weekly: $300 | Monthly: $1200</p>
+          <button class="btn js-booking-redirect">View Details</button>
+        </div>
+      </div>
+      <div class="card toyota-fortuner">
+        <img src="images/fortuner2012.png" alt="Toyota Fortuner">
+        <div class="details">
+          <h3>Toyota Fortuner 2012</h3>
+          <p>Manual Transmission</p>
+          <p>Daily: $70 | Weekly: $400 | Monthly: $1500</p>
+          <button class="btn js-booking-redirect">View Details</button>
+        </div>
+      </div>
+      <!-- Add more car cards as needed -->
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <h2>Pricing</h2>
+    <div class="table">
+      <div class="plan">
+        <h3>Daily Plan</h3>
+        <p>$50/day</p>
+        <button class="btn js-booking-redirect">Select</button>
+      </div>
+      <div class="plan">
+        <h3>Weekly Plan</h3>
+        <p>$300/week</p>
+        <button class="btn js-booking-redirect">Select</button>
+      </div>
+      <div class="plan">
+        <h3>Monthly Plan</h3>
+        <p>$1200/month</p>
+        <button class="btn js-booking-redirect">Select</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking">
+    <h2>Book Your Ride</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone" required>
+      <input type="date" name="pickup" placeholder="Pick-up Date" required>
+      <input type="date" name="dropoff" placeholder="Drop-off Date" required>
+      <select name="car" required>
+        <option value="">Select Car</option>
+        <option value="toyota-vios">Toyota Vios</option>
+        <option value="toyota-fortuner">Toyota Fortuner 2012</option>
+        <!-- Add more options as needed -->
+      </select>
+      <input type="text" name="location" placeholder="Pick-up Location" required>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button class="btn" type="submit">Send</button>
+    </form>
+    <div class="info">
+      <p>Phone: +1 234 567 890</p>
+      <p>Email: info@chrismari.com</p>
+      <p>Business Hours: 9 AM - 6 PM</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>CHRISMARI</div>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+    <p>&copy; 2025 CHRISMARI Car Rental Services. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

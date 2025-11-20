@@ -1,0 +1,887 @@
+/* CHRISMARI Car Rental Services - Stylesheet */
+
+:root {
+  --primary: #ff4d1c;
+  --primary-dark: #d63e12;
+  --accent: #ffb347;
+  --surface: #ffffff;
+  --text-dark: #1f1f1f;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --success: #16a34a;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body.booking-page {
+  background: linear-gradient(180deg, #fff7f2 0%, #f4f7fb 60%, #eef1f5 100%);
+  color: var(--text-dark);
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #222;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #000;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: #000;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 1rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff0000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .btn {
+  padding: 0.5rem 1rem;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.navbar .btn:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('images/jgh.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero > div {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #ff0000;
+  color: #fff;
+}
+
+.hero .btn:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.about img {
+  flex: 1 1 50%;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+
+.about .content {
+  flex: 1 1 50%;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  margin-bottom: 1rem;
+}
+
+/* Fleet Section */
+.fleet {
+  padding: 4rem 2rem;
+  background: #fff;
+  color: #000;
+}
+
+.fleet h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fleet .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.fleet .card {
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fleet .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fleet .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.fleet .card .details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.fleet .card .details h3 {
+  margin-bottom: 0.5rem;
+}
+
+.fleet .card .details .btn {
+  margin-top: 1rem;
+  background: #ff0000;
+  color: #fff;
+}
+
+.fleet .card .details .btn:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+/* Toyota Vios Card Animation */
+.card.toyota-vios {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.toyota-vios:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Toyota Vios Card Hover Effect */
+.card.toyota-vios img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card.toyota-vios:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 4rem 2rem;
+  background: #000;
+  color: #fff;
+}
+
+.pricing h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing .table {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pricing .table .plan {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing .table .plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pricing .table .plan h3 {
+  margin-bottom: 1rem;
+}
+
+.pricing .table .plan .btn {
+  margin-top: 1rem;
+  background: #ff0000;
+  color: #fff;
+}
+
+.pricing .table .plan .btn:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+/* Booking Section */
+.booking {
+  padding: 4rem 2rem;
+  background: #fff;
+  color: #000;
+}
+
+.booking h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-header {
+  text-align: center;
+  padding: 4rem 0 3rem;
+  background: linear-gradient(120deg, #ff7a18, #af002d 85%);
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.booking-header .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.booking-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.booking-header .lead {
+  max-width: 720px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.booking-steps {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.booking-steps .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.booking-steps .step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.booking-steps .step.completed .step-number,
+.booking-steps .step.current .step-number {
+  background: #fff;
+  color: var(--primary);
+  border-color: #fff;
+}
+
+.booking-steps .step.current span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.card-surface {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  margin-bottom: 2rem;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.booking-left,
+.booking-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.booking-right {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+.booking-page main {
+  padding-bottom: 4rem;
+}
+
+.car-selection {
+  padding: 0;
+}
+
+.car-carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.car-card {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+.car-card.selected {
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(255, 77, 28, 0.15);
+}
+
+.car-media img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.car-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.price-tag {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.badge {
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--success);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.badge.neutral {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+.booking-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-grid.two-column {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 77, 28, 0.15);
+}
+
+.help-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.add-ons .section-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.add-ons .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip input {
+  accent-color: var(--primary);
+}
+
+.chip input:checked + span,
+.chip input:checked ~ span {
+  font-weight: 600;
+}
+
+.total-price-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  color: #fff;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  font-size: 1.15rem;
+  box-shadow: 0 15px 25px rgba(15, 23, 42, 0.25);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-actions .btn {
+  min-width: 180px;
+}
+
+.booking-summary {
+  padding: 0;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.summary-row strong {
+  color: var(--text-dark);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 77, 28, 0.08);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.summary-card .btn {
+  width: 100%;
+}
+
+.payment-section {
+  padding: 0;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.method-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 600;
+}
+
+.method-card input {
+  accent-color: var(--primary);
+}
+
+.method-card.is-active {
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(255, 77, 28, 0.15);
+}
+
+.payment-fields {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.payment-fields.active {
+  display: flex;
+}
+
+.payment-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.payment-fields input,
+.payment-fields select {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.payment-note {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.payment-status {
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.payment-section .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 2rem;
+  background: #000;
+  color: #fff;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact form input,
+.contact form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact form .btn {
+  align-self: center;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #ff0000;
+}
+
+/* Splash Screen */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#splash-gif {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Button Hover Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff0000, #ff7300);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ClickClick Animation */
+#click-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 150px;
+  height: auto;
+  z-index: -1;
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn:active #click-animation {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 3D Car Animation */
+#car-animation {
+  position: fixed;
+  bottom: -100px;
+  left: -200px;
+  width: 150px;
+  height: auto;
+  z-index: 1000;
+  transition: transform 2s ease-in-out;
+}
+
+#car-animation.move {
+  transform: translateX(100vw);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-right {
+    position: static;
+  }
+
+  .card-head {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .car-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .total-price-pill {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .booking-steps {
+    gap: 0.75rem;
+  }
+}
